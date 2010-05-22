@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:py="http://genshi.edgewall.org/">
+	<xi:include href="layout.html" />
+	<head>
+		<title>Item Watcher</title>
+	</head>
+	<body>
+		<table py:if="items" width="100%">
+			<tbody>
+			<tr>
+				<th>ID</th>
+				<th colspan="3">Description</th>
+				<th colspan="2">Time Left</th>
+				<th colspan="2">Last Update</th>
+			</tr>
+			</tbody>
+			<tbody py:for="item in items">
+			<py:if test="item.info">
+			<tr>
+				<td rowspan="3">
+					<a href="${item.info.itemurl}">${item.id}</a><br/><br/>
+					<a class="action" href="/delete/?id=${item.id}">Delete</a>
+				</td>
+				<td colspan="3"><a href="${item.info.itemurl}">${item.info.name}</a></td>
+				<td colspan="2">${item.info.timeleft}</td>
+				<td colspan="2">${item.last_update}</td>
+			</tr>
+			<tr>
+				<th>Ends</th>
+				<th>Bids</th>
+				<th>Current</th>
+				<th>Minimum</th>
+				<th>Maximum</th>
+				<th>Shipping</th>
+				<th>Returns</th>
+			</tr>
+			<tr>
+				<td class="endtime">${item.info.isoendtime}</td>
+				<td>${item.info.bidhistory}</td>
+				<td><b><a href="${item.info.bidurl}">${item.info.bid}</a></b></td>
+				<td>${item.info.minbid}</td>
+				<td>${item.maxbid}</td>
+				<td>${item.info.shipping}</td>
+				<td>${item.info.returns}</td>
+			</tr>
+			</py:if>
+			</tbody>
+		</table>
+		<p><a class="action" href="/submit/">Add new item</a></p>
+	</body>
+</html>

@@ -1,0 +1,113 @@
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: #ddd;
+	color: #333;
+	font: normal 90%/1.3 Arial, Helvetica, sans-serif;
+}
+
+table td {
+	background: #ccc;
+	padding: 2px;
+	text-align: center;
+}
+
+form table td {
+	text-align: left;
+}
+
+:link, :visited {
+	color: #c10000;
+	text-decoration: none;
+}
+
+:link:hover, :visited:hover {
+	text-decoration: underline;
+}
+
+:link img, :visited img {
+	border: none;
+}
+
+.action:link, .action:visited {
+	background: #f3f3f3;
+	border: 1px outset #ddd;
+	color: #666;
+	font-size: 90%;
+	padding: 0 .3em;
+}
+
+.action:link:hover, .action:visited:hover {
+	background: #e8e8e8;
+    border-color: #aaa;
+	color: #000;
+	text-decoration: none;
+}
+
+h1 {
+	color: #666;
+	font: normal xx-large/1.5 Georgia, serif;
+	margin: 0 0 .5em;
+}
+
+blockquote {
+	font-style: italic;
+}
+
+form table {
+	margin-bottom: 1em;
+}
+
+form table tbody th {
+	font-weight: normal;
+	padding-top: .3em;
+	text-align: right;
+	vertical-align: top;
+}
+
+form label {
+	color: #666;
+	font-size: 90%;
+}
+
+form p.hint {
+	color: #666;
+	font-size: 90%; 
+	font-style: italic;
+	margin: 0;
+}
+
+form .error {
+	color: #b00;
+}
+
+#wrap {
+	background: #fff;
+	margin: 30px auto;
+}
+
+#content {
+	border-left: 10px solid #b00;
+	min-height: 240px;
+	padding: 10px;
+}
+
+#footer {
+	background: #4A4D4D;
+	border-top: 2px solid #333;
+	font-size: x-small;
+	padding: 3px;
+	text-align: center;
+}
+
+#footer hr {
+	display: none;
+}
+
+.legalese {
+	color: #999;
+	margin: 0;
+}

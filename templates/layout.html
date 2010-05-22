@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:py="http://genshi.edgewall.org/" py:strip="">
+	<py:match path="head" once="true">
+	<head py:attrs="select('@*')">
+		<title py:with="title = list(select('title/text()'))">
+			<py:if test="title">${title}</py:if>
+		</title>
+		<link rel="stylesheet" href="${url('/media/layout.css')}" type="text/css" />
+		<link rel="stylesheet" href="${url('/media/jquery.countdown.css')}" type="text/css" />
+		<script type="text/javascript" src="${url('/media/jquery.js')}"></script>
+		<script type="text/javascript" src="${url('/media/jquery.countdown.js')}"></script>
+		<script type="text/javascript" src="${url('/media/date.js')}"></script>
+		<script type="text/javascript" src="${url('/media/actions.js')}"></script>
+		<script type="text/javascript">
+			$(document).ready(domReady);
+		</script>
+		${select('*[local-name()!="title"]')}
+	</head>
+	</py:match>
+
+	<py:match path="body" once="true">
+	<body py:attrs="select('@*')">
+	<div id="wrap">
+		<div id="header"></div>
+		<div id="content">
+			${select('*|text()')}
+		</div>
+		<div id="footer">
+			<hr />
+			<p class="legalese">Copyright &copy; 2010 <a href="http://www.evilgenius.su/?lang=en">Sergey Anufrienko</a></p>
+		</div>
+	</div>
+	</body>
+	</py:match>
+</html>

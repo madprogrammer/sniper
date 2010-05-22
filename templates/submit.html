@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:py="http://genshi.edgewall.org/">
+	<xi:include href="layout.html" />
+	<head>
+	<title>Add new item</title>
+	</head>
+	<body class="submit">
+	<h1>Add new item</h1>
+
+	<form action="" method="post">
+		<table summary="">
+		<tbody>
+		<tr>
+			<th><label for="id">Item ID:</label></th>
+			<td>
+				<input type="text" id="id" name="id" />
+				<span py:if="'id' in errors" class="error">${errors.id}</span>
+	        </td>
+		</tr>
+		<tr>
+			<th><label for="maxbid">Maximum Bid:</label></th>
+			<td>
+				<input type="text" id="maxbid" name="maxbid" />
+				<span py:if="'maxbid' in errors" class="error">${errors.maxbid}</span>
+			</td>
+		</tr>
+		<tr>
+	        <td></td>
+    	    <td>
+        	  <input type="submit" value="Submit" />
+	          <input type="submit" name="cancel" value="Cancel" />
+    	    </td>
+		</tr>
+		</tbody>
+		</table>
+	</form>
+  </body>
+</html>
