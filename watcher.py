@@ -28,7 +28,7 @@ class ItemWatcher(threading.Thread):
 			try:
 				if item.maxbid >= item.info['minbid']:
 					print "Sniping item %d (our bid %d)" % (item.id, item.maxbid)
-					#self.cli.bid(item.id, item.maxbid)
+					self.cli.bid(item.id, item.maxbid)
 					print "Successful bid at %s! Hope you win!" % (self.timeLeft(item))
 				else:
 					print "Skipping item %d as our max bid is lower than current minimum" % (item.maxbid)
